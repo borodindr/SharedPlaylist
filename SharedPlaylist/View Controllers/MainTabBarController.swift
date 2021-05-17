@@ -18,11 +18,13 @@ class MainTabBarController: UITabBarController {
         let nav0 = UINavigationController(rootViewController: vc0)
         nav0.navigationBar.prefersLargeTitles = true
         nav0.tabBarItem.title = "Library"
+        nav0.tabBarItem.image = UIImage(systemName: "music.note")
         
         let vc1 = NewPlaylistViewController()
         let nav1 = UINavigationController(rootViewController: vc1)
         nav1.navigationBar.prefersLargeTitles = true
         nav1.tabBarItem.title = "New Playlist"
+        nav1.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         
         setViewControllers([nav0, nav1], animated: false)
     }
