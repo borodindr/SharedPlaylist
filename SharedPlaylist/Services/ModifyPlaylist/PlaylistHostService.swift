@@ -90,6 +90,7 @@ extension PlaylistHostService: ModifyPlaylistService {
     
     func savePlaylist() {
         CoreDataStack.shared.saveContext()
+        delegate?.modifyPlaylistServiceDidEnd(self)
     }
     
     func dismissPlaylist() {
