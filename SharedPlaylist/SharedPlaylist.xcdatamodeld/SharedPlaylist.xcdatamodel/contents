@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1009" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="PlaylistEntity" representedClassName="PlaylistEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SongEntity" inverseName="playlist" inverseEntity="SongEntity"/>
+    </entity>
+    <entity name="SongEntity" representedClassName="SongEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="artistId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String"/>
+        <attribute name="artworkURL" optional="YES" attributeType="URI"/>
+        <attribute name="indexInPlaylist" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String"/>
+        <relationship name="playlist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlaylistEntity" inverseName="songs" inverseEntity="PlaylistEntity"/>
+    </entity>
+    <elements>
+        <element name="PlaylistEntity" positionX="-303.90234375" positionY="17.015625" width="128" height="103"/>
+        <element name="SongEntity" positionX="-63" positionY="9" width="128" height="148"/>
+    </elements>
 </model>
